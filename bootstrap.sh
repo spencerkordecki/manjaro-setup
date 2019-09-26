@@ -7,6 +7,7 @@ CONFIG_DIRECTORY=~/.config/
 USER_APPLICATIONS=(
     telegram-desktop-bin
     visual-studio-code-bin
+    xcalib
 )
 DEVELOPMENT_TOOLS=(
     docker-git
@@ -100,6 +101,9 @@ do
     printf "Installing VS Code Extension $i...\n"
     code --install-extension "$i"
 done
+
+printf "Color Calibrating Laptop Display...\n"
+xcalib x1-carbon-color-calibration.icc
 
 printf "Cleaning Cached Packages...\n"
 yay --noconfirm -Sc
