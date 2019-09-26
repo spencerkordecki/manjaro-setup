@@ -38,6 +38,9 @@ printf "Installing 'oh-my-zsh'...\n"
 yay --needed --noconfirm -S oh-my-zsh-git
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+printf "Installing Plugins for 'oh-my-zsh'...\n"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 printf "Installing 'yay'...\n"
 git clone $YAY_GIT_REPO
 cd /yay
