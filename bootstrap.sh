@@ -36,6 +36,7 @@ chsh -s /usr/bin/zsh
 
 printf "Installing 'oh-my-zsh'...\n"
 yay --needed --noconfirm -S oh-my-zsh-git
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 printf "Installing 'yay'...\n"
 git clone $YAY_GIT_REPO
