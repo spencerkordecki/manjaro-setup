@@ -17,6 +17,12 @@ DEVELOPMENT_TOOLS=(
 SNAP_APPLICATIONS=(
     spotify
 )
+VS_CODE_EXTENSIONS=(
+    dracula-theme.theme-dracula
+    esbenp.prettier-vscode
+    octref.vetur
+    eamodio.gitlens
+)
 
 printf "Updating System & Packages...\n"
 sudo pacman -Syu
@@ -86,6 +92,13 @@ do
     # Use /bin/cp to prevent removing the 'cp -i alias' from bashrc
     printf "Copying $f...\n"
     /bin/cp -R $f $targetFile
+done
+
+printf "Installing VS Code Extensions...\n"
+for i in "${VS_CODE_EXTENSIONS[@]}"
+do
+    printf "Installing VS Code Extension $i...\n"
+    code --install-extension "$i"
 done
 
 printf "Cleaning Cached Packages...\n"
