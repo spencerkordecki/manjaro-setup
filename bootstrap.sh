@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # Global Variables
-GIT_USER_EMAIL="spencerkordecki@gmail.com"
-GIT_USER_NAME="Spencer Kordecki"
 YAY_GIT_REPO="https://aur.archlinux.org/yay.git"
 SNAP_GIT_REPO="https://aur.archlinux.org/snapd.git"
 CONFIG_DIRECTORY=~/.config/
@@ -14,6 +12,7 @@ DEVELOPMENT_TOOLS=(
     docker-git
     npm
     nodejs
+    xclip
 )
 SNAP_APPLICATIONS=(
     spotify
@@ -25,10 +24,6 @@ sudo pacman -Syu
 printf "Installing 'git' and 'zsh'...\n"
 sudo pacman --needed --noconfirm -S git zsh
 
-printf "Configuring 'git'...\n"
-git config --global user.email $GIT_USER_EMAIL
-git config --global user.name $GIT_USER_NAME
-
 printf "Changing Default Shell to 'zsh'...\n"
 chsh -s /usr/bin/zsh
 
@@ -36,15 +31,19 @@ printf "Installing 'oh-my-zsh'...\n"
 yay --needed --noconfirm -S oh-my-zsh-git
 
 printf "Installing 'yay'...\n"
-git clone $YAY_GIT_REPO /tmp/yay
-cd /tmp/yay
+git clone $YAY_GIT_REPO
+cd /yay
 makepkg -si --needed --noconfirm
+cd ..
+rm -rf yay/
 
 printf "Installing 'snap'...\n"
-git clone $SNAP_GIT_REPO /tmp/snap
-cd /tmp/snap
+git clone $SNAP_GIT_REPO
+cd /snapd
 makepkg -si --needed --noconfirm
 sudo systemctl enable --now snapd.socket
+cd ..
+rm -rf snapd/
 
 printf "Installing User Applications...\n"
 for i in "${USER_APPLICATIONS[@]}"
@@ -91,8 +90,5 @@ done
 
 printf "Cleaning Cached Packages...\n"
 yay --noconfirm -Sc
-
-printf "Removing /tmp directory...\n"
-sudo rm -rf /tmp
 
 printf "Setup Complete!"
