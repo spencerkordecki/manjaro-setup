@@ -14,6 +14,7 @@ DEVELOPMENT_TOOLS=(
     npm
     nodejs
     xclip
+    vim
 )
 SNAP_APPLICATIONS=(
     spotify
