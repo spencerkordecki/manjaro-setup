@@ -44,6 +44,9 @@ printf "Installing Plugins for 'oh-my-zsh'...\n"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
 
+printf "Installing Plugins for 'vim'...\n"
+git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim
+
 printf "Installing 'yay'...\n"
 git clone $YAY_GIT_REPO
 cd /yay
