@@ -14,7 +14,7 @@ DEVELOPMENT_TOOLS=(
     npm
     nodejs
     xclip
-    vim,
+    vim
     printrun
 )
 SNAP_APPLICATIONS=(
@@ -23,8 +23,9 @@ SNAP_APPLICATIONS=(
 VS_CODE_EXTENSIONS=(
     dracula-theme.theme-dracula
     esbenp.prettier-vscode
-    octref.vetur
     eamodio.gitlens
+    dbaeumer.vscode-eslint
+    rust-lang.rust
 )
 
 printf "Updating System & Packages...\n"

@@ -1,4 +1,19 @@
 {
-    "workbench.colorTheme": "Dracula",
-    "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Dracula",
+  "window.zoomLevel": 2,
+  "rust-client.enableMultiProjectSetup": null,
+  "rust-client.rustupPath": "~/.cargo/bin/rustup",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "gitlens.statusBar.enabled": false,
+  "gitlens.blame.highlight.locations": ["gutter", "line"],
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "workbench.editor.untitled.hint": "hidden"
 }
